@@ -140,6 +140,8 @@ spec:
         git config --global user.email "${GIT_USER_EMAIL}"
         git config --global user.name "${GIT_USER_NAME}"
 
+        git config --global --add safe.directory $(workspaces.input.path)/$(params.repo-directory)
+
         n_changes=$(git status -s | wc -l)
         if [[ ${n_changes} -eq 0 ]]; then
           echo "No changes"
