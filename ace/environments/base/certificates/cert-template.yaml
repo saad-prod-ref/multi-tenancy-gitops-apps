@@ -1,0 +1,55 @@
+kind: Template
+apiVersion: template.openshift.io/v1
+metadata:
+  name: cert-template
+objects:
+  - kind: Certificate
+    apiVersion: cert-manager.io/v1
+    metadata:
+     name: ${NAME}
+    spec:
+     secretName: ${NAME}-key-pair
+     isCA: true
+     issuerRef:
+       name: ${ISSUER_NAME}
+       kind: ${ISSUER_TYPE}
+     commonName: ${COMMON_NAME}
+     subject:
+      countries:
+        - ${SUBJECT_COUNTRY}
+      provinces:
+        - ${SUBJECT_PROVINCE}
+      localities:
+        - ${SUBJECT_LOCALITY}
+      organizations:
+        - ${SUBJECT_ORGANIZATION}
+      organizationalUnits:
+        - ${SUBJECT_ORGANIZATIONAL_UNIT}
+     dnsNames:
+     - ${INGRESS_WILDCARD}
+parameters:
+  - name: NAME
+    required: true
+  - name: ISSUER_NAME
+    required: true
+  - name: ISSUER_TYPE
+    value: Issuer
+    required: true
+  - name: SUBJECT_COUNTRY
+    value: GB
+    required: true
+  - name: SUBJECT_PROVINCE
+    value: London
+    required: true
+  - name: SUBJECT_LOCALITY
+    value: London
+    required: true
+  - name: SUBJECT_ORGANIZATION
+    value: IBM
+    required: true
+  - name: SUBJECT_ORGANIZATIONAL_UNIT
+    value: Assets and Architecture
+    required: true
+  - name: INGRESS_WILDCARD
+    required: true
+
