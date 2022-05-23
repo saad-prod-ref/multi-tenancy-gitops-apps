@@ -12,12 +12,6 @@ items:
     issuerRef:
       kind: Issuer
       name: prod-ref-ss
-    keystores:
-      jks:
-        create: true
-        passwordSecretRef:
-          key: password-key
-          name: jks-password-secret
     secretName: ace-tls-key-pair
     subject:
       countries:
