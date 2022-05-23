@@ -3,7 +3,7 @@ items:
 - apiVersion: cert-manager.io/v1
   kind: Certificate
   metadata:
-    name: ACE
+    name: ace
   spec:
     commonName: appdomain.cloud
     dnsNames:
@@ -18,7 +18,7 @@ items:
         passwordSecretRef:
           key: password-key
           name: jks-password-secret
-    secretName: ACE-tls-key-pair
+    secretName: ace-tls-key-pair
     subject:
       countries:
       - GB
