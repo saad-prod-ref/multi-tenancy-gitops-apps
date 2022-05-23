@@ -8,7 +8,7 @@ items:
     commonName: ${COMMON_NAME}
     dnsNames:
     - '*.itzroks-5500059ths-unonwt-6ccd7f378ae819553d37d5f2ee142bd6-0000.eu-gb.containers.appdomain.cloud'
-    isCA: "true"
+    isCA: true
     issuerRef:
       kind: Issuer
       name: root-issuer
