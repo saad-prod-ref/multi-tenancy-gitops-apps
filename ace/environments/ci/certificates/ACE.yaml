@@ -13,6 +13,12 @@ items:
       kind: Issuer
       name: prod-ref-ss
     secretName: ace-tls-key-pair
+    keystores:
+      jks:
+        create: true
+        passwordSecretRef:
+          key: jks-password
+          name: gitops-jks-password
     subject:
       countries:
       - GB
