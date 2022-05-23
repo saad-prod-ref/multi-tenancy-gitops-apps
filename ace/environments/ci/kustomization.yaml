@@ -29,6 +29,7 @@ resources:
 # - secrets/ibm-ca-jks-secret.yaml
 # - secrets/ibm-client-jks-secret.yaml
 # - secrets/ibm-client-key-certs-secret.yaml
+- secrets/create-customer-truststore.yaml
 - secrets/gitops-jks-password.yaml
 - secrets/github-user-token-secret-cicd-acme.yaml
 - secrets/gitops-repo-pk-secret-ace-config-at-github.yaml
