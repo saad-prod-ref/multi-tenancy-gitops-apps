@@ -15,3 +15,4 @@ resources:
   - integrationServer/create-customer-details-rest.yaml
   - configurations/create_customer_keystore_setdbparms.yaml
   - configurations/create_customer_jks.yaml
+  - configurations/create_customer_truststore_jks.yaml
