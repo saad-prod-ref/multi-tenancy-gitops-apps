@@ -1,19 +1,4 @@
 resources:
-  - issuers/root-issuer.yaml
-  # - issuers/ca-issuer.yaml
-  - certificates/client.yaml
-  - certificates/ace.yaml
-  - configurations/create_customer_serverconf_yaml.yaml
-  - configurations/create_customer_policy.yaml
   - secrets/ibm-entitlement-key-secret.yaml
-  - secrets/create-customer-keystore-setdbparms.yaml
-  - secrets/create-customer-truststore-setdbparms.yaml
-  - secrets/create-customer-jks.yaml
-  - secrets/create-customer-truststore-jks.yaml
-  - secrets/ace-password.yaml
   - dashboard/ace-dashboard.yaml
-  - integrationServer/create-customer-details-rest.yaml
-  - configurations/create_customer_keystore_setdbparms.yaml
-  - configurations/create_customer_jks.yaml
-  - configurations/create_customer_truststore_jks.yaml
-  - configurations/create_customer_truststore_setdbparms.yaml
+
