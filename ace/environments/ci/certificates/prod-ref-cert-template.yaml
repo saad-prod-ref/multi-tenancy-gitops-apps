@@ -1,0 +1,39 @@
+kind: Template
+apiVersion: template.openshift.io/v1
+metadata:
+  name: certificate-template
+objects:
+  - apiVersion: cert-manager.io/v1
+    kind: Certificate
+    metadata:
+      name: ${NAME}
+    spec:
+      secretName: ${NAME}-tls-key-pair
+      keystores:
+        jks:
+          create: true
+          passwordSecretRef:
+            key: password-key
+            name: jks-password-secret        
+      isCA: true
+      issuerRef:
+        name: prod-ref-ss
+        kind: Issuer
+      commonName: appdomain.cloud
+      subject:
+        countries:
+          - GB
+        provinces:
+          - London
+        localities:
+          - London
+        organizations:
+          - IBM
+        organizationalUnits:
+          - ${ORG_UNIT}
+      dnsNames:
+        - "${INGRESS_WILDCARD}"
+parameters:
+  - name: NAME
+  - name: ORG_UNIT
+  - name: INGRESS_WILDCARD
