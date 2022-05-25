@@ -11,3 +11,5 @@ resources:
   - secrets/ace-password.yaml
   - dashboard/ace-dashboard.yaml
   - integrationServer/create-customer-details-rest.yaml
+  - configurations/create_customer_keystore_setdbparms.yaml
+  - configurations/create_customer_keystore.yaml
