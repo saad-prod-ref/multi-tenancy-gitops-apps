@@ -8,6 +8,7 @@ resources:
   - secrets/ibm-entitlement-key-secret.yaml
   - secrets/create-customer-keystore-setdbparms.yaml
   - secrets/create-customer-jks.yaml
+  - secrets/create-customer-truststore-jks.yaml
   - secrets/ace-password.yaml
   - dashboard/ace-dashboard.yaml
   - integrationServer/create-customer-details-rest.yaml
