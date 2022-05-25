@@ -1,0 +1,7 @@
+apiVersion: appconnect.ibm.com/v1beta1
+kind: Configuration
+metadata:
+  name: create-customer-truststore-setdbparms
+spec:
+  type: setdbparms
+  secretName: create-customer-truststore-setdbparms
