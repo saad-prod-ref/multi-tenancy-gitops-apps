@@ -1,7 +1,7 @@
 kind: Template
 apiVersion: template.openshift.io/v1
 metadata:
-  name: cert-template
+  name: cert-with-jks-template
 objects:
   - kind: Certificate
     apiVersion: cert-manager.io/v1
@@ -9,7 +9,13 @@ objects:
      name: ${NAME}
     spec:
      secretName: ${NAME}-key-pair
-     isCA: true
+     keystores:
+       jks:
+         create: ${{JKS_CREATE}}
+         passwordSecretRef:
+           key: password
+           name: ${NAME}-jks-password
+     isCA: ${{IS_CA}}
      issuerRef:
        name: ${ISSUER_NAME}
        kind: ${ISSUER_TYPE}
@@ -30,25 +36,25 @@ objects:
 parameters:
   - name: NAME
     required: true
+  - name: JKS_CREATE
+    required: true
+  - name: IS_CA
+    required: true
   - name: ISSUER_NAME
     required: true
   - name: ISSUER_TYPE
-    value: Issuer
     required: true
+  - name: COMMON_NAME
+    required: true    
   - name: SUBJECT_COUNTRY
-    value: GB
     required: true
   - name: SUBJECT_PROVINCE
-    value: London
     required: true
   - name: SUBJECT_LOCALITY
-    value: London
     required: true
   - name: SUBJECT_ORGANIZATION
-    value: IBM
     required: true
   - name: SUBJECT_ORGANIZATIONAL_UNIT
-    value: Assets and Architecture
     required: true
   - name: INGRESS_WILDCARD
     required: true
