@@ -1,0 +1,7 @@
+apiVersion: appconnect.ibm.com/v1beta1
+kind: Configuration
+metadata:
+  name: create-customer-truststore.jks
+spec:
+  type: truststore
+  secretName: create-customer-truststore.jks
