@@ -1,4 +1,5 @@
 resources:
+  - certificates/ace.yaml
   - secrets/ace-password.yaml
   - secrets/ibm-entitlement-key-secret.yaml
   - dashboard/ace-dashboard.yaml
