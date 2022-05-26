@@ -1,5 +1,6 @@
 resources:
   - certificates/ace.yaml
+  - secrets/create-customer-keystore-jks.yaml
   - secrets/ace-password.yaml
   - secrets/ibm-entitlement-key-secret.yaml
   - dashboard/ace-dashboard.yaml
