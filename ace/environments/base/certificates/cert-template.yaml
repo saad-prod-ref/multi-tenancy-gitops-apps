@@ -1,0 +1,61 @@
+kind: Template
+apiVersion: template.openshift.io/v1
+metadata:
+  name: cert-with-jks-template
+objects:
+  - kind: Certificate
+    apiVersion: cert-manager.io/v1
+    metadata:
+     name: ${NAME}
+    spec:
+     secretName: ${NAME}-key-pair
+     keystores:
+       jks:
+         create: ${{JKS_CREATE}}
+         passwordSecretRef:
+           key: password
+           name: ${NAME}-jks-password
+     isCA: ${{IS_CA}}
+     issuerRef:
+       name: ${ISSUER_NAME}
+       kind: ${ISSUER_TYPE}
+     commonName: ${COMMON_NAME}
+     subject:
+      countries:
+        - ${SUBJECT_COUNTRY}
+      provinces:
+        - ${SUBJECT_PROVINCE}
+      localities:
+        - ${SUBJECT_LOCALITY}
+      organizations:
+        - ${SUBJECT_ORGANIZATION}
+      organizationalUnits:
+        - ${SUBJECT_ORGANIZATIONAL_UNIT}
+     dnsNames:
+     - ${INGRESS_WILDCARD}
+parameters:
+  - name: NAME
+    required: true
+  - name: JKS_CREATE
+    required: true
+  - name: IS_CA
+    required: true
+  - name: ISSUER_NAME
+    required: true
+  - name: ISSUER_TYPE
+    required: true
+  - name: COMMON_NAME
+    required: true    
+  - name: SUBJECT_COUNTRY
+    required: true
+  - name: SUBJECT_PROVINCE
+    required: true
+  - name: SUBJECT_LOCALITY
+    required: true
+  - name: SUBJECT_ORGANIZATION
+    required: true
+  - name: SUBJECT_ORGANIZATIONAL_UNIT
+    required: true
+  - name: INGRESS_WILDCARD
+    required: true
+
