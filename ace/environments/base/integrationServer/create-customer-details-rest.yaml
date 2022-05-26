@@ -12,15 +12,17 @@ spec:
   router:
     timeout: 120s
   service:
-    endpointType: http
+    endpointType: https
   useCommonServices: true
   version: 12.0.1.0-r3
   adminServerSecure: true
   pod:
     containers:
       runtime:
-        image: image-registry.openshift-image-registry.svc:5000/ci/create-customer-details-rest:2353c83d50366ce20ff752ba6a2a6e4ae2df0f3a
+        image: image-registry.openshift-image-registry.svc:5000/ci/create-customer-details-rest:ecd7525f95c42b532df6b767b6d8e96f65b497d6
         imagePullPolicy: Always
   configurations:
     - create-customer-serverconf.yaml
     - create-customer-policy
+    - create-customer-keystore-setdbparms
+    - create-customer-keystore.jks
